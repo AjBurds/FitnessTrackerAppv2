@@ -27,11 +27,6 @@ android {
 
     buildFeatures {
         dataBinding = true
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.1.0" // Check for the latest version
     }
 
     compileOptions {
@@ -64,18 +59,15 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
-
     // Jetpack Compose dependencies
     implementation("androidx.compose.ui:ui:1.1.0")
     implementation("androidx.compose.material:material:1.1.0")
     implementation("androidx.compose.ui:ui-tooling-preview:1.1.0")
     implementation("androidx.compose.runtime:runtime-livedata:1.1.0")
     implementation("androidx.navigation:navigation-compose:2.4.0-alpha10")
-
     // Compose Material3 dependency
     implementation("androidx.compose.material3:material3:1.0.0-alpha01")
-    implementation("androidx.compose.material:material:1.2.1") // Ensure material2 is also available if needed
-
+    implementation("androidx.compose.material:material:1.2.1")
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
@@ -83,3 +75,4 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.0")
     debugImplementation("androidx.compose.ui:ui-tooling:1.1.0")
 }
+
