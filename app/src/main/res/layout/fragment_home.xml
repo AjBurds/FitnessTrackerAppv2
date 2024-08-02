@@ -13,13 +13,61 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:padding="16dp"
         tools:context=".HomeFragment">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Home Screen"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_daily_steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps today: 0"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_calories_burned"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calories burned: 0"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_distance_covered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distance covered: 0 km"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_daily_goal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today's Goal: 5,000 steps"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/btn_start_workout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Workout"
+            android:layout_marginTop="24dp"
             android:layout_gravity="center" />
+
     </LinearLayout>
 </layout>
-
