@@ -29,6 +29,20 @@ android {
         dataBinding = true
     }
 
+    sourceSets {
+        getByName("test") {
+            java.srcDir("src/test/java")
+        }
+        getByName("androidTest") {
+            java.srcDir("src/androidTest/java")
+        }
+    }
+
+    kapt {
+        correctErrorTypes = true
+        includeCompileClasspath = false // Excludes Kapt from running during the test phase
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -59,6 +73,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.12.0")
+
     // Jetpack Compose dependencies
     implementation("androidx.compose.ui:ui:1.1.0")
     implementation("androidx.compose.material:material:1.1.0")
@@ -68,11 +83,15 @@ dependencies {
     // Compose Material3 dependency
     implementation("androidx.compose.material3:material3:1.0.0-alpha01")
     implementation("androidx.compose.material:material:1.2.1")
-    // Testing
+
+    // Testing dependencies
     testImplementation("junit:junit:4.13.2")
+    testImplementation("androidx.arch.core:core-testing:2.1.0") // for LiveData testing
+    testImplementation("org.mockito:mockito-core:4.2.0") // Mockito core
+    testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0") // Mockito for Kotlin
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0") // For coroutine testing
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.0")
     debugImplementation("androidx.compose.ui:ui-tooling:1.1.0")
 }
-
